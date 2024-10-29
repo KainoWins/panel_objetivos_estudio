@@ -1,0 +1,120 @@
+
+      body {
+        font-family: Arial, sans-serif;
+        /* display: flex;
+        justify-content: center;
+        flex-wrap: wrap; */
+        
+      }
+
+      .json-box {
+        margin:1em;
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #f4f4f4;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .json-box:nth-child(odd) {
+        background-color: #e1f5fe;
+      }
+
+      .json-box:nth-child(even) {
+        background-color: #ffecb3;
+      }
+
+      .json-title {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      .json-text {
+        font-size: 1em;
+      }
+
+      .form-box {
+        display: none; /* Colapsado por defecto */
+        width: 80%;
+        padding: 2em;
+        margin: 1em;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #e0f7fa;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-box input,
+      .form-box textarea,
+      .form-box button {
+        display: block;
+        width: 100%;
+        padding: 0.3em;
+        margin: 0.5em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .estilo-header{
+        display: grid;
+        grid-template-columns: 1fr 11fr; 
+        text-align: center;
+        background-color: antiquewhite;
+        padding: 1em;
+        border-radius: 10px;
+      }
+
+      .estilo-header h1 {
+        text-align: center;
+        margin: 0;
+      }
+
+      .toggle-button {
+        font-size: 24px;
+        background-color: #8c916a;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+       /* Contenedor de grid */
+    .contenedor-grid {
+      display: grid;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    /* Configuración de grid en modo escritorio */
+    @media (min-width: 768px) {
+      .contenedor-grid {
+        grid-template-columns: 4fr 8fr; /* form-box ocupa 3/12, contenido 9/12 */
+      }
+      .form-box.hidden {
+        grid-template-columns: 4fr 8fr; /* form-box ocupa 3/12, contenido 9/12 */
+      }
+    }
+
+    /* Configuración de grid en modo móvil */
+    @media (max-width: 767px) {
+      .contenedor-grid {
+        grid-template-columns: 6fr 6fr; /* form-box ocupa 6/12 en móvil */
+      }
+      .form-box.hidden {
+        display: none;
+      }
+    }
+
+   .contenido {
+      /* background-color: #eaeaea;
+      border-radius: 8px; */
+      display: flex;
+      /* justify-content: center; */
+      flex-wrap: wrap;
+    } 

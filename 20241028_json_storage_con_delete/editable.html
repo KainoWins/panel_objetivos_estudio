@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentación de Objetos JSON (Editable con localStorage)</title>
+    <link rel="stylesheet" href="./estilo.css">
+  </head>
+
+  <body>
+    <header class="estilo-header">
+      <button id="toggle-form" class="toggle-button" >+</button>
+      <h1 >Panel de objetivos</h1>
+    </header>
+
+     <!-- Contenedor general para el layout en columnas -->
+  <div class="contenedor-grid">
+    <!-- Columna form-box (inicialmente oculta) -->
+    <div class="form-box" id="form-box">
+      <h2>Añadir pasos para el estudio</h2>
+      <input type="text" id="titulo" placeholder="Título del objeto" />
+      <textarea id="texto" placeholder="Texto del objeto"></textarea>
+      <button onclick="agregarObjeto()">Agregar al JSON</button>
+      <button onclick="descargarJSON()">Descargar JSON</button>
+      <input type="file" id="upload" accept=".json" style="margin-top: 10px" onchange="cargarArchivo(event)" />
+    </div>
+
+    <!-- Columna para otros elementos -->
+    <div class="contenido" id="panelContenido">
+      <!-- <p>Aquí van otros elementos que ocuparán el espacio restante cuando el form-box esté visible.</p> -->
+    </div>
+  </div>
+
+
+    <script src="./controllerJson.js"></script>
+    <script>
+      // Función para mostrar u ocultar el form-box
+      document.getElementById("toggle-form").addEventListener("click", function () {
+        const formBox = document.getElementById("form-box");
+  
+        // Alterna la visibilidad de formBox
+        if (formBox.style.display === "none" || formBox.style.display === "") {
+          formBox.style.display = "block"; // Mostrar
+          this.textContent = "-"; // Cambiar el botón a "-"
+        } else {
+          formBox.style.display = "none"; // Ocultar
+          this.textContent = "+"; // Cambiar el botón a "+"
+        }
+      });
+    </script>
+</body>
+</html>
