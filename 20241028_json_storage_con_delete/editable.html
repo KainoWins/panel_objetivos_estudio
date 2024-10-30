@@ -4,29 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Documentación de Objetos JSON (Editable con localStorage)</title>
+    <!-- Enlace al CSS de Bootstrap descargado -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="./estilo.css">
   </head>
 
   <body>
-    <header class="estilo-header">
-      <button id="toggle-form" class="toggle-button" >+</button>
-      <h1 >Panel de objetivos</h1>
+    <header class="estilo-header row">
+      <div class="col-1 justify-content-center">
+        <button id="toggle-form" class="toggle-button" >+</button>
+      </div>
+      <div class="col-11">
+        <h1 >Panel de objetivos</h1>
+      </div>
     </header>
 
      <!-- Contenedor general para el layout en columnas -->
-  <div class="contenedor-grid">
+  <div class="row">
     <!-- Columna form-box (inicialmente oculta) -->
-    <div class="form-box" id="form-box">
+    <div class="form-box col-4" id="form-box">
       <h2>Añadir pasos para el estudio</h2>
       <input type="text" id="titulo" placeholder="Título del objeto" />
       <textarea id="texto" placeholder="Texto del objeto"></textarea>
-      <button onclick="agregarObjeto()">Agregar al JSON</button>
-      <button onclick="descargarJSON()">Descargar JSON</button>
+      <button onclick="agregarObjeto()" class="btn btn-primary">Agregar al JSON</button>
+      <button onclick="descargarJSON()" class="btn btn-primary">Descargar JSON</button>
       <input type="file" id="upload" accept=".json" style="margin-top: 10px" onchange="cargarArchivo(event)" />
     </div>
 
     <!-- Columna para otros elementos -->
-    <div class="contenido" id="panelContenido">
+    <div class="contenido col-7" id="panelContenido">
       <!-- <p>Aquí van otros elementos que ocuparán el espacio restante cuando el form-box esté visible.</p> -->
     </div>
   </div>
@@ -48,5 +54,7 @@
         }
       });
     </script>
+    <!-- Enlace al JS de Bootstrap descargado -->
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
